@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 	<title>1</title>
 	<style type="text/css">
 		.main{
@@ -51,6 +52,29 @@
  
     var rotateX = -20;
     var rotateY = 0;
+	document.touchmove=function(event){
+          let oldx = event.clientX
+          let oldy = event.clientY
+          this.onmousemove = function(e){
+     		     var e = e || window.event;
+          		let newx = e.clientX
+          		let newy = e.clientY
+ 
+          		var minusX =newx-oldx
+          			minusY =newy-oldy
+ 
+          		rotateX+=minusY;
+          		rotateY+=minusX;
+ 
+          		mian.style.transform="rotateX("+(-rotateX)*0.1+"deg) rotateY("+(rotateY)*0.1+"deg) "
+          		oldx = newx;
+          		oldy = newy
+          }
+          // this.onmouseup = function () {
+          //        //鼠标松开事件 
+          //     this.onmousemove = null;
+          // }
+     }
     document.onmousedown=function(event){
           let oldx = event.clientX
           let oldy = event.clientY
