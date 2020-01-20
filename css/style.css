@@ -5,6 +5,10 @@ body {
   font-family: 'Anton', sans-serif;
   justify-content: center;
   align-items: center;
+  background-image:url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .night {
